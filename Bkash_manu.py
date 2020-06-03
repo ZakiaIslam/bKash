@@ -250,21 +250,24 @@ def Mobile_Recharge_2():
 def Payment_3():
     global PIN
     global account_balance
-    merchant_accout = int(input("Enter Merchant bKash Account No: "))
-    amount = int(input("Enter Amount: "))
-    reference = input("Enter Reference: ")
-    counter = int(input("Enter Counter No: "))
-    print("Payment\nTo: {} \nAmount: {} \nReference: {} \nCounter: {} \n".format(merchant_accout,amount,reference,counter))
-    check_pin = int(input("Enter Menu PIN to comfirm: "))
-    #check_pin = int(input())
-    if check_pin == PIN:
-        if account_balance < amount:
-            print("Unsufficient Balance")
-        else:
-            account_balance -= amount
-            print("Successfully Payment Completed")
+    merchant_accout = input("Enter Merchant bKash Account No: ")
+    if len(merchant_accout) != 11:
+        print("Please Enter Correct Merchant Account Number: ")
     else:
-        print("PIN Number is Not Correct")
+        amount = int(input("Enter Amount: "))
+        reference = input("Enter Reference: ")
+        counter = int(input("Enter Counter No: "))
+        print("Payment\nTo: {} \nAmount: {} \nReference: {} \nCounter: {} \n".format(merchant_accout,amount,reference,counter))
+        check_pin = int(input("Enter Menu PIN to comfirm: "))
+    #check_pin = int(input())
+        if check_pin == PIN:
+            if account_balance < amount:
+                print("Unsufficient Balance")
+            else:
+                account_balance -= amount
+                print("Successfully Payment Completed")
+        else:
+            print("PIN Number is Not Correct")
 
     #pass
 def Cash_Out_4():
@@ -278,18 +281,21 @@ def Cash_Out_4():
     if selected_number == 0:
         main_manu()
     elif selected_number == 1:
-        agent_number = int(input("Enter Agent bKash Account No: "))
-        amount = int(input("Enter Amount: "))
-        print("Cash out: \nTo: {} \nAmount: {} \nEnter Menu PIN to comfirm: ".format(agent_number,amount))
-        check_pin = int(input())
-        if check_pin == PIN:
-            if account_balance < amount:
-                print("Unsufficient Balance")
-            else:
-                account_balance -= amount
-                print("Successfully Cash Out tk{}".format(amount))
+        agent_number = input("Enter Agent bKash Account No: ")
+        if len(agent_number) != 11:
+            print("Please Enter correct Agent Number: ")
         else:
-            print("PIN Number is Not Correct")
+            amount = int(input("Enter Amount: "))
+            print("Cash out: \nTo: {} \nAmount: {} \nEnter Menu PIN to comfirm: ".format(agent_number,amount))
+            check_pin = int(input())
+            if check_pin == PIN:
+                if account_balance < amount:
+                    print("Unsufficient Balance")
+                else:
+                    account_balance -= amount
+                    print("Successfully Cash Out tk{}".format(amount))
+            else:
+                print("PIN Number is Not Correct")
 
     elif selected_number == 2:
         check_pin = int(input("Enter Menu PIN to request ATM Cash Out: "))
@@ -342,23 +348,24 @@ def My_bKash_7():
     if dial_number == 0:
         main_manu()
     elif dial_number == 1:
-        check_pin = int(input())
+        check_pin = int(input("Enter Your PIN Number: "))
         if check_pin == PIN:
             print("Your current bKash Account balance is Tk {}\nApp diye balance check simple!".format(account_balance))
         else:
             print("Invalid PIN Number")
     elif dial_number == 2:
-        check_pin = int(input())
+        check_pin = int(input("Enter Your PIN Number: "))
         if check_pin == PIN:
             print("Your request has been processed.Wait few minutes for sms")
         else:
             print("Invalid PIN Number")
     elif dial_number == 3:
-        check_pin = int(input("Enter Old PIN"))
+        check_pin = int(input("Enter Old PIN: "))
         if check_pin != PIN:
             print("Invalid PIN Number")
         else:
-            PIN = int(input("Enter a 5 digit New PIN"))
+            PIN = int(input("Enter a 5 digit New PIN: "))
+            print("Your PIN Number is sccessfully Updated")
 
     elif dial_number == 4:
         print("bKash\n"
