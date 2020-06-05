@@ -22,10 +22,11 @@ def main_manu():
 def Send_Money_1():
     global account_balance
     global PIN
-    print("Enter Receive bKash Account No:...")
-    receive_account_number = input()
+    #print("Enter Receive bKash Account No:...")
+    receive_account_number = input("Enter Receive bKash Account No:...")
     if len(receive_account_number) != 11 :
-        print("Please Enter correct Account Number")
+        print("Please Enter correct Account Number.\n\n")
+        Send_Money_1()
     else:
         print("Enter Amount:...")
         amount = int(input())
@@ -36,12 +37,14 @@ def Send_Money_1():
         PIN_check = int(input())
         if PIN_check == PIN:
             if account_balance < amount:
-                print("Unsufficient Balance")
+                print("Unsufficient Balance.\n\n")
+                main_manu()
             else:
                 account_balance -= amount
-                print("Successfully Send Money")
+                print("Successfully Send Money.")
         else:
-            print("PIN Number is Not Correct")
+            print("PIN Number is Not Correct.\n\n")
+            Send_Money_1()
 
     #pass
 def Mobile_Recharge_2():
@@ -70,24 +73,28 @@ def Mobile_Recharge_2():
         else:
             account_number = input("Enter Robi Mobile No:....")
             if len(account_number) != 11 :
-                print("Please Enter Correct Number")
+                print("Please Enter Correct Number.\n\n")
+                Mobile_Recharge_2()
             else:
                 if account_number[:3] != "018":
-                    print("Please Enter Correct Robi Number")
+                    print("Please Enter Correct Robi Number.\n\n")
+                    Mobile_Recharge_2()
                 else:
-                    recharge_amount = int(input(("Enter Recharge Amount")))
+                    recharge_amount = int(input(("Enter Recharge Amount: ")))
                     print("Mobile Recharge.\nTo: {} \nRecharge Amount: {} \n".format(account_number,recharge_amount))
                     print("Enter Menu PIN to confirm: ")
                     PIN_check = int(input())
                     if PIN_check == PIN:
                         if account_balance < recharge_amount:
-                            print("Unsufficient Balance")
+                            print("Unsufficient Balance.\n\n")
+                            main_manu()
                         else:
                             account_balance -= recharge_amount
-                            print("Successfully Recharged")
+                            print("Successfully Recharged.")
                     else:
 
-                        print("PIN Number is Not Correct")
+                        print("PIN Number is Not Correct.\n\n")
+                        Mobile_Recharge_2()
 
     elif sim_number == 2:
         select_number = int(input(("bKash\n"
@@ -103,23 +110,27 @@ def Mobile_Recharge_2():
         else:
             account_number = input("Enter Airtel Mobile No:....")
             if len(account_number) != 11 :
-                print("Please Enter Correct Number")
+                print("Please Enter Correct Number.\n\n")
+                Mobile_Recharge_2()
             else:
                 if account_number[:3] != "016":
-                    print("Please Enter Correct Airtel Number")
+                    print("Please Enter Correct Airtel Number.\n\n")
+                    Mobile_Recharge_2()
                 else:
-                    recharge_amount = int(input(("Enter Recharge Amount")))
+                    recharge_amount = int(input(("Enter Recharge Amount: ")))
                     print("Mobile Recharge.\nTo: {} \nRecharge Amount: {} \n".format(account_number,recharge_amount))
                     print("Enter Menu PIN to confirm: ")
                     PIN_check = int(input())
                     if PIN_check == PIN:
                         if account_balance < recharge_amount:
-                            print("Unsufficient Balance")
+                            print("Unsufficient Balance.\n\n")
+                            main_manu()
                         else:
                             account_balance -= recharge_amount
-                            print("Successfully Recharged")
+                            print("Successfully Recharged.")
                     else:
-                        print("PIN Number is Not Correct")
+                        print("PIN Number is Not Correct.\n\n")
+                        Mobile_Recharge_2()
 
     elif sim_number == 3:
         select_number = int(input(("bKash\n"
@@ -135,23 +146,27 @@ def Mobile_Recharge_2():
         else:
             account_number = input("Enter Banglalimk Mobile No:....")
             if len(account_number) != 11 :
-                print("Please Enter Correct Number")
+                print("Please Enter Correct Number.\n\n")
+                Mobile_Recharge_2()
             else:
                 if account_number[:3] != "019":
-                    print("Please Enter Correct Banglalimk Number")
+                    print("Please Enter Correct Banglalimk Number.\n\n")
+                    Mobile_Recharge_2()
                 else:
-                    recharge_amount = int(input(("Enter Recharge Amount")))
+                    recharge_amount = int(input(("Enter Recharge Amount: ")))
                     print("Mobile Recharge.\nTo: {} \nRecharge Amount: {} \n".format(account_number,recharge_amount))
                     print("Enter Menu PIN to confirm: ")
                     PIN_check = int(input())
                     if PIN_check == PIN:
                         if account_balance < recharge_amount:
-                            print("Unsufficient Balance")
+                            print("Unsufficient Balance.\n\n")
+                            main_manu()
                         else:
                             account_balance -= recharge_amount
-                            print("Successfully Recharged")
+                            print("Successfully Recharged.")
                     else:
-                        print("PIN Number is Not Correct")
+                        print("PIN Number is Not Correct.\n\n")
+                        Mobile_Recharge_2()
 
 
     elif sim_number == 4:
@@ -166,44 +181,52 @@ def Mobile_Recharge_2():
         elif select_number==1 or select_number ==2:
             account_number = input("Enter Grameenphone Mobile No:....")
             if len(account_number) != 11 :
-                print("Please Enter Correct Number")
+                print("Please Enter Correct Number.\n\n")
+                Mobile_Recharge_2()
             else:
                 if account_number[:3] != "017":
-                    print("Please Enter Correct Grameenphone Number")
+                    print("Please Enter Correct Grameenphone Number.\n\n")
+                    Mobile_Recharge_2()
                 else:
-                    recharge_amount = int(input(("Enter Recharge Amount")))
+                    recharge_amount = int(input(("Enter Recharge Amount: ")))
                     print("Mobile Recharge.\nTo: {} \nRecharge Amount: {} \n".format(account_number,recharge_amount))
                     print("Enter Menu PIN to confirm: ")
                     PIN_check = int(input())
                     if PIN_check == PIN:
                         if account_balance < recharge_amount:
-                            print("Unsufficient Balance")
+                            print("Unsufficient Balance.\n\n")
+                            main_manu()
                         else:
                             account_balance -= recharge_amount
-                            print("Successfully Recharged")
+                            print("Successfully Recharged.")
                     else:
-                        print("PIN Number is Not Correct")
+                        print("PIN Number is Not Correct.\n\n")
+                        Mobile_Recharge_2()
 
         elif select_number==3:
             account_number = input("Enter Grameenphone Mobile No:....")
             if len(account_number) != 11 :
-                print("Please Enter Correct Number")
+                print("Please Enter Correct Number.\n\n")
+                Mobile_Recharge_2()
             else:
                 if account_number[:3] != "013":
-                    print("Please Enter Correct Grameenphone Number")
+                    print("Please Enter Correct Grameenphone Number.\n\n")
+                    Mobile_Recharge_2()
                 else:
-                    recharge_amount = int(input(("Enter Recharge Amount")))
+                    recharge_amount = int(input(("Enter Recharge Amount: ")))
                     print("Mobile Recharge.\nTo: {} \nRecharge Amount: {} \n".format(account_number,recharge_amount))
                     print("Enter Menu PIN to confirm: ")
                     PIN_check = int(input())
                     if PIN_check == PIN:
                         if account_balance < recharge_amount:
-                            print("Unsufficient Balance")
+                            print("Unsufficient Balance.\n\n")
+                            main_manu()
                         else:
                             account_balance -= recharge_amount
-                            print("Successfully Recharged")
+                            print("Successfully Recharged.")
                     else:
-                        print("PIN Number is Not Correct")
+                        print("PIN Number is Not Correct.\n\n")
+                        Mobile_Recharge_2()
 
     elif sim_number == 5:
         select_number = int(input(("bKash\n"
@@ -216,10 +239,12 @@ def Mobile_Recharge_2():
         else:
             account_number = input("Enter Teletalk Mobile No:....")
             if len(account_number) != 11 :
-                print("Please Enter Correct Number")
+                print("Please Enter Correct Number.\n\n")
+                Mobile_Recharge_2()
             else:
                 if account_number[:3] != "015":
-                    print("Please Enter Correct Teletalk Number")
+                    print("Please Enter Correct Teletalk Number.\n\n")
+                    Mobile_Recharge_2()
                 else:
                     recharge_amount = int(input(("Enter Recharge Amount")))
                     print("Mobile Recharge.\nTo: {} \nRecharge Amount: {} \n".format(account_number, recharge_amount))
@@ -227,12 +252,14 @@ def Mobile_Recharge_2():
                     PIN_check = int(input())
                     if PIN_check == PIN:
                         if account_balance < recharge_amount:
-                            print("Unsufficient Balance")
+                            print("Unsufficient Balance.\n\n")
+                            main_manu()
                         else:
                             account_balance -= recharge_amount
                             print("Successfully Recharged your ammount is ",account_balance)
                     else:
-                        print("PIN Number is Not Correct")
+                        print("PIN Number is Not Correct.\n\n")
+                        Mobile_Recharge_2()
     elif sim_number == 0:
         main_manu()
 
@@ -252,7 +279,8 @@ def Payment_3():
     global account_balance
     merchant_accout = input("Enter Merchant bKash Account No: ")
     if len(merchant_accout) != 11:
-        print("Please Enter Correct Merchant Account Number: ")
+        print("Please Enter Correct Merchant Account Number.\n\n")
+        Payment_3()
     else:
         amount = int(input("Enter Amount: "))
         reference = input("Enter Reference: ")
@@ -262,12 +290,14 @@ def Payment_3():
     #check_pin = int(input())
         if check_pin == PIN:
             if account_balance < amount:
-                print("Unsufficient Balance")
+                print("Unsufficient Balance.\n\n")
+                main_manu()
             else:
                 account_balance -= amount
-                print("Successfully Payment Completed")
+                print("Successfully Payment Completed.")
         else:
-            print("PIN Number is Not Correct")
+            print("PIN Number is Not Correct.\n\n")
+            Payment_3()
 
     #pass
 def Cash_Out_4():
@@ -283,26 +313,30 @@ def Cash_Out_4():
     elif selected_number == 1:
         agent_number = input("Enter Agent bKash Account No: ")
         if len(agent_number) != 11:
-            print("Please Enter correct Agent Number: ")
+            print("Please Enter correct Agent Number.\n\n")
+            Cash_Out_4()
         else:
             amount = int(input("Enter Amount: "))
             print("Cash out: \nTo: {} \nAmount: {} \nEnter Menu PIN to comfirm: ".format(agent_number,amount))
             check_pin = int(input())
             if check_pin == PIN:
                 if account_balance < amount:
-                    print("Unsufficient Balance")
+                    print("Unsufficient Balance.\n\n")
+                    main_manu()
                 else:
                     account_balance -= amount
                     print("Successfully Cash Out tk{}".format(amount))
             else:
-                print("PIN Number is Not Correct")
+                print("PIN Number is Not Correct.\n\n")
+                Cash_Out_4()
 
     elif selected_number == 2:
         check_pin = int(input("Enter Menu PIN to request ATM Cash Out: "))
         if check_pin == PIN:
             print("You Secuity Code is",random.randint(00000,99999),".Go to a bKash enabled ATM booth within 5 minutes.\nUse this code on ATM screen")
         else:
-            print("Invalid PIN Number")
+            print("Invalid PIN Number.\n\n")
+            Cash_Out_4()
 
     #pass
 def Pay_Bill_5():
@@ -328,11 +362,12 @@ def Pay_Bill_5():
 def App_Registration_for_25_Bonus_6():
     global PIN
     print("bKash App Registration.\n")
-    chack_pin = int(input("Enter Menu PIN to confirm:"))
+    chack_pin = int(input("Enter Menu PIN to confirm: "))
     if chack_pin == PIN:
         print("Registration Complete")
     else:
         print("Invalid PIN number")
+        App_Registration_for_25_Bonus_6()
     #pass
 def My_bKash_7():
     global account_balance
@@ -352,20 +387,23 @@ def My_bKash_7():
         if check_pin == PIN:
             print("Your current bKash Account balance is Tk {}\nApp diye balance check simple!".format(account_balance))
         else:
-            print("Invalid PIN Number")
+            print("Invalid PIN Number.\n\n")
+            My_bKash_7()
     elif dial_number == 2:
         check_pin = int(input("Enter Your PIN Number: "))
         if check_pin == PIN:
-            print("Your request has been processed.Wait few minutes for sms")
+            print("Your request has been processed.Wait few minutes for SMS.")
         else:
-            print("Invalid PIN Number")
+            print("Invalid PIN Number.\n\n")
+            My_bKash_7()
     elif dial_number == 3:
         check_pin = int(input("Enter Old PIN: "))
         if check_pin != PIN:
-            print("Invalid PIN Number")
+            print("Invalid PIN Number.\n\n")
+            My_bKash_7()
         else:
             PIN = int(input("Enter a 5 digit New PIN: "))
-            print("Your PIN Number is sccessfully Updated")
+            print("Your PIN Number is sccessfully Updated.")
 
     elif dial_number == 4:
         print("bKash\n"
@@ -395,13 +433,16 @@ def My_bKash_7():
         if selected_number == 0:
             main_manu()
         elif ((selected_number == 1) or (selected_number == 2) or (selected_number == 3) or (selected_number == 4)):
-            check_pin = int(input("Enter PIN"))
+            check_pin = int(input("Enter PIN: "))
             if check_pin != PIN :
-                print("Invalid PIN Number")
+                print("Invalid PIN Number.\n\n")
+                My_bKash_7()
             else:
-                print("Thank You.Your information has been update successfully")
+                print("Thank You.Your information has been update successfully.")
         else:
-            print("Please Enter Correct Number")
+            print("Please Enter Correct Number.\n\n")
+            My_bKash_7()
+
 
     #pass
 def Helpline_8():
@@ -414,7 +455,8 @@ def Helpline_8():
     elif dial_number == 1:
         print("Open phone App And dial number by yourself or goto google and visit the site !!!!")
     else:
-        print("Please Dial the correct Number!!!")
+        print("Please Dial the correct Number!!!\n\n")
+
 
 ### Start
 account_balance = 20000
